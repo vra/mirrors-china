@@ -1,0 +1,9 @@
+// ustc, doc: https://lug.ustc.edu.cn/wiki/mirrors/help/docker
+{
+  "registry-mirrors": ["https://docker.mirrors.ustc.edu.cn"]
+}
+
+// docker-cn, doc: https://www.docker-cn.com/registry-mirror 
+//{
+//  "registry-mirrors": ["https://registry.docker-cn.com"]
+//}
