@@ -44,7 +44,7 @@ pip install -i https://path/to/pypi/mirror package
 #    trusted-host=mirrors.163.com
 ```
 
-本文中默认用的中科大的源实际使用的时候，选择自己访问最快的**一个**镜像就可以了，将别的镜像设置注释掉或者删掉。
+本文中默认用的中科大的源，实际使用的时候，选择自己访问最快的**一个**镜像就可以了，将别的镜像设置注释掉或者删掉。
 
 
 ## Anaconda 包加速
