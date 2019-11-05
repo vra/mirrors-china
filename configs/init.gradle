@@ -1,4 +1,4 @@
-# aliyun maven: https://maven.aliyun.com/mvn/view
+// aliyun maven: https://maven.aliyun.com/mvn/view
 allprojects {
     buildscript {
         repositories {
