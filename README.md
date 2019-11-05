@@ -1,7 +1,7 @@
 # mirrors-china
 Mirrors and registries in China to seedup your package installation.
 
-由于许多包的存放服务器在国外，国内安装比较慢，因此本文总结了常见的包（例如Python包，Linux不同发行版的包）在国内的开源镜像，加速你的下载，提高安装体验。下面总结了PyPi，Anacoda，NPM， Docker，RubyGems和Linux的国内镜像。
+由于许多包的存放服务器在国外，国内安装比较慢，因此本文总结了常见的包（例如Python包，Linux不同发行版的包）在国内的开源镜像，加速你的下载，提高安装体验。下面总结了PyPi，Anacoda，NPM， Docker，RubyGems，Gradle和Linux的国内镜像。
 
 ## How to use
 ```bash
@@ -103,6 +103,32 @@ gem sources -a https://mirrors.ustc.edu.cn/rubygems/  #添加科大源
 #gem sources --add https://mirrors.tuna.tsinghua.edu.cn/rubygems/ --remove #https://rubygems.org/
 #gem sources -l
 ```
+
+## Gradle 包加速
+Android Studio基于gradle构建，可使用aliyun的maven仓库进行加速。为所有Android Studio项目做配置，先定位`$GRADLE_USER_HOME`所在目录：
+
+- Windows：默认位于`C:\Users\<user_name>\.gradle`
+- Linux：默认位于`$HOME\.gradle`
+- 特别声明了`$GRADLE_USER_HOME`环境变量：声明所在目录
+
+在`$GRADLE_USER_HOME`目录下，新建init.gradle文件（或从本仓库config/init.gradle拷贝），内容如下：
+
+```groovy
+# aliyun maven: https://maven.aliyun.com/mvn/view
+allprojects {
+    buildscript {
+        repositories {
+            maven { url 'https://maven.aliyun.com/repository/google' }
+            maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        }
+    }
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+    }
+}
+```
+重启AS以生效；或将上述配置临时修改与当前AS项目的build.gradle文件中以生效。
 
 ## Linux 包加速
 由于Linux发行版众多，配置各不相同，因此请参考下面的源下面的文档进行对应发行版的配置：
