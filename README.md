@@ -109,12 +109,12 @@ Android Studio基于gradle构建，可使用aliyun的maven仓库进行加速。�
 
 - Windows：默认位于`C:\Users\<user_name>\.gradle`
 - Linux：默认位于`$HOME\.gradle`
-- 特别声明了`$GRADLE_USER_HOME`环境变量：声明所在目录
+- 特别声明了`$GRADLE_USER_HOME`环境变量，或在`Android Studio安装目录/bin/idea.properties`中声明了`gradle.user.home`变量：声明所在目录
 
-在`$GRADLE_USER_HOME`目录下，新建init.gradle文件（或从本仓库config/init.gradle拷贝），内容如下：
+在`$GRADLE_USER_HOME`（或idea.properties中的`gradle.user.home`）目录下，新建init.gradle文件（或从本仓库config/init.gradle拷贝），内容如下：
 
 ```groovy
-# aliyun maven: https://maven.aliyun.com/mvn/view
+// aliyun maven: https://maven.aliyun.com/mvn/view
 allprojects {
     buildscript {
         repositories {
