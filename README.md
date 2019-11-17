@@ -16,9 +16,16 @@ cd mirror-china
 ```bash
 pip install -i https://path/to/pypi/mirror package
 ```
-永久使用的话，需要修改配置文件。对于系统级别的修改，增加下面的配置文件到`/etc/pip.conf`，如果只是自己使用，修改`~/.pip/pip.conf`。
+永久使用的话，需要修改配置文件`pip.conf`：
+
+- Linux/MacOS：对于系统级别的修改，增加下面的配置文件到`/etc/pip.conf`，如果只是自己使用，修改`~/.pip/pip.conf`。
+
+- Windows: 修改`c:/Users/xxx/pip/pip.ini`
+
 ```bash
-# file path: /etc/pip.conf or ~/.pip/pip.conf
+# file path: 
+#   Linux/MacOS: /etc/pip.conf or ~/.pip/pip.conf
+#   Windows: c:/Users/xxx/pip/pip.ini
 
 # ustc, doc: https://lug.ustc.edu.cn/wiki/mirrors/help/pypi
 [global]
@@ -60,6 +67,30 @@ conda config --set show_channel_urls yes
 #conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 #conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 #conda config --set show_channel_urls yes
+```
+
+或者，可以通过自行编辑配置文件`.condarc`来进行设定：
+
+- Linux/MacOS: `~/.condarc`
+
+- Windows: `c:/Users/xxx/.condarc`
+
+```bash
+# thu, doc: https://mirror.tuna.tsinghua.edu.cn/help/anaconda/
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
 ## NPM 包加速
@@ -129,6 +160,9 @@ allprojects {
 }
 ```
 重启AS以生效；或将上述配置临时修改与当前AS项目的build.gradle文件中以生效。
+
+## Git 仓库加速
+[码云](http://gitee.com)提供了导入git仓库功能。对于最常用的github上的仓库，可在[码云极速下载](https://gitee.com/mirrors)查看已有镜像，或注册账号后自行新建repo从github导入，以加速访问。
 
 ## Linux 包加速
 由于Linux发行版众多，配置各不相同，因此请参考下面的源下面的文档进行对应发行版的配置：
