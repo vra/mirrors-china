@@ -18,19 +18,28 @@ pip install -i https://path/to/pypi/mirror package
 ```
 永久使用的话，需要修改配置文件`pip.conf`：
 
-- Linux/MacOS：对于系统级别的修改，增加下面的配置文件到`/etc/pip.conf`，如果只是自己使用，修改`~/.pip/pip.conf`。
+- Linux/MacOS配置文件：优先级从高到低
+  - 系统级：`/etc/pip.conf`
+  - 用户级：`~/.config/pip/pip.conf`或`~/.pip/pip.conf`，前者优先级比后者高
+  - 虚拟环境级：虚拟环境根目录下`pip.conf`
 
 - Windows: 修改`c:/Users/xxx/pip/pip.ini`
 
 ```bash
+# official doc: https://pip.pypa.io/en/stable/user_guide/
 # file path: 
-#   Linux/MacOS: /etc/pip.conf or ~/.pip/pip.conf
+#   Linux/MacOS: /etc/pip.conf, or ~/.config/pip.conf, or pip/pip.conf
 #   Windows: c:/Users/xxx/pip/pip.ini
 
-# ustc, doc: https://lug.ustc.edu.cn/wiki/mirrors/help/pypi
+# douban, may be the fastest
 [global]
-    index-url = https://mirrors.ustc.edu.cn/pypi/web/simple
-    trusted-host=mirrors.ustc.edu.cn
+index-url = https://pypi.doubanio.com/simple
+
+
+# ustc, doc: https://lug.ustc.edu.cn/wiki/mirrors/help/pypi
+#[global]
+#    index-url = https://mirrors.ustc.edu.cn/pypi/web/simple
+#    trusted-host=mirrors.ustc.edu.cn
 
 
 # thu, doc: https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
