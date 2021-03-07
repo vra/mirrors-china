@@ -16,7 +16,12 @@ cd mirror-china
 ```bash
 pip install -i https://path/to/pypi/mirror package
 ```
-永久使用的话，需要修改配置文件`pip.conf`：
+永久使用的话，如果pip版本升级到10.0以后，可以用下面到命令来一键永久修改：
+```bash
+# 参考https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+也可以修改配置文件`pip.conf`：
 
 - Linux/MacOS配置文件：优先级从高到低
   - 系统级：`/etc/pip.conf`
