@@ -1,5 +1,5 @@
 # mirrors-china
-Mirrors and registries in China to seedup your package installation.
+Mirrors and registries in China to speedup your package installation.
 
 由于许多包的存放服务器在国外，国内安装比较慢，因此本文总结了常见的包（例如Python包，Linux不同发行版的包）在国内的开源镜像，加速你的下载，提高安装体验。下面总结了PyPi，Anacoda，NPM， Docker，RubyGems，Gradle和Linux的国内镜像。
 
@@ -63,6 +63,11 @@ index-url = https://pypi.doubanio.com/simple
 #[global]
 #    index-url=https://mirrors.163.com/pypi/simple
 #    trusted-host=mirrors.163.com
+
+# tencent, doc: https://mirrors.cloud.tencent.com/help/pypi.html
+#[global]
+#    index-url=https://mirrors.cloud.tencent.com/pypi/simple
+#    trusted-host=mirrors.cloud.tencent.com
 ```
 
 本文中默认用的中科大的源，实际使用的时候，选择自己访问最快的**一个**镜像就可以了，将别的镜像设置注释掉或者删掉。
